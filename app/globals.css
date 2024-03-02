@@ -6,3 +6,13 @@ body {
   color: #fffff;
   background: #0000;
 }
+
+.mobile-menu-closed {
+  display: none;
+  transform: translateY(-100%);
+}
+
+.mobile-menu-open {
+  display: block;
+  transform: translateY(0);
+}
