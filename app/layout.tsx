@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased min-h-screen bg-slate-950 text-slate-50 ${ibmFont.className}`}
+        className={`antialiased min-h-screen bg-vanilla text-azure ${ibmFont.className}`}
       >
         <div className="max-w-2xl mx-auto py-10 px-4">
           <Navbar />

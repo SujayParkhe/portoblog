@@ -26,12 +26,12 @@ const Navbar = () => {
             )}
         </div>
         <nav className="hidden sm:flex text-base font-medium space-x-6">
-          <Link href="/projects" className="hover:text-violet-500">Projects</Link>
-          <Link href="/blog" className="hover:text-violet-500">Blog</Link>
+          <Link href="/projects" className="hover:text-mandarin focus:underline focus:decoration-mandarin">Projects</Link>
+          <Link href="/blog" className="hover:text-mandarin focus:underline focus:decoration-mandarin">Blog</Link>
         </nav>
       </div>
       <MobileNavbar isOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
-      <hr className="border-violet-500" aria-hidden="true" />
+      <hr className="border-mandarin" aria-hidden="true" />
     </header>
   );
 };

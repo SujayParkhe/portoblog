@@ -7,7 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'vanilla': '#FDF8F4',
+        'azure': '#0C1D37',
+        'mandarin': '#FF8008'
+      },
+    },
   },
   plugins: [],
 };
