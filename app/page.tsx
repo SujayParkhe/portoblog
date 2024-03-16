@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <main>
         <Intro />
+        <hr className="border-mandarin" aria-hidden="true" />
         <RecentPosts />
       </main>
     </>
