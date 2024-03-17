@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const ibmFont = IBM_Plex_Mono({ weight: "400", subsets: ["latin"] });
 
@@ -22,7 +23,8 @@ export default function RootLayout({
       >
         <div className="max-w-2xl mx-auto py-10 px-4">
           <Navbar />
-          {children}
+            {children}
+          <Footer />
         </div>
       </body>
     </html>

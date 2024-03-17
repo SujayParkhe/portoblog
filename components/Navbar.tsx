@@ -19,18 +19,32 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="sm:hidden">
-            {isMobileMenuOpen ? (
-              <BiX onClick={toggleMobileMenu} size={32} />
-            ): (
-              <BiMenuAltLeft onClick={toggleMobileMenu} size={32} />
-            )}
+          {isMobileMenuOpen ? (
+            <BiX onClick={toggleMobileMenu} size={32} />
+          ) : (
+            <BiMenuAltLeft onClick={toggleMobileMenu} size={32} />
+          )}
         </div>
         <nav className="hidden sm:flex text-base font-medium space-x-6">
-          <Link href="/projects" className="hover:text-mandarin focus:underline focus:decoration-mandarin">Projects</Link>
-          <Link href="/blog" className="hover:text-mandarin focus:underline focus:decoration-mandarin">Blog</Link>
+          {/* <Link href="/projects" className="hover:text-mandarin focus:underline focus:decoration-mandarin">Projects</Link> */}
+          <Link
+            href="/blog"
+            className="hover:text-mandarin focus:underline focus:decoration-mandarin"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/contact"
+            className="hover:text-mandarin focus:underline focus:decoration-mandarin"
+          >
+            Say Hello!
+          </Link>
         </nav>
       </div>
-      <MobileNavbar isOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+      <MobileNavbar
+        isOpen={isMobileMenuOpen}
+        toggleMobileMenu={toggleMobileMenu}
+      />
       <hr className="border-mandarin" aria-hidden="true" />
     </header>
   );

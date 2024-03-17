@@ -1,25 +1,19 @@
 import Image from "next/image";
-import Link from "next/link";
-import {
-  TbBrandBehance,
-  TbBrandGithub,
-  TbBrandLinkedin,
-  TbBrandGmail,
-} from "react-icons/tb";
+import SocialLinks from "./SocialLinks";
 
 const Intro = () => {
   return (
     <div className="my-16">
-      <div className="flex">
+      <div className="flex flex-col sm:flex-row">
         <Image
           src="/avatar.png"
-          className="w-40 h-40"
           alt="Sujay Parkhe"
+          className="flex-shrink-0 self-center mb-4 sm:mb-0"
           width={150}
           height={150}
           priority
         />
-        <div className="ml-4 leading-4">
+        <div className="sm:ml-4 sm:leading-4">
           <h1 className="text-4xl font-bold tracking-tighter">
             Hi,I&apos;m Sujay.
           </h1>
@@ -36,10 +30,7 @@ const Intro = () => {
       <div className="flex items-center mt-8">
         <h2 className="text-lg font-medium">Social Links: </h2>
         <div className="flex space-x-2 ml-2 cursor-pointer">
-          <TbBrandGithub size={24} />
-          <TbBrandLinkedin size={24} />
-          <TbBrandBehance size={24} />
-          <TbBrandGmail size={24} />
+          <SocialLinks />
         </div>
       </div>
     </div>
