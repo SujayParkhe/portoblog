@@ -1,15 +1,15 @@
 import Intro from "@/components/Intro";
 import RecentPosts from "@/components/RecentPosts";
-import Footer from "@/components/Footer";
+import { fetchBlogs } from "./utils/fetchBlogs";
 
-
-export default function Home() {
+export default async function Home() {
+  const blogs = await fetchBlogs();
   return (
     <>
       <main>
         <Intro />
         <hr className="border-mandarin" aria-hidden="true" />
-        <RecentPosts />
+        <RecentPosts blogs={blogs} />
       </main>
     </>
   );
