@@ -1,15 +1,15 @@
-import { fetchSingleBlog } from "@/app/utils/fetchSingleBlog";
-import ReactMarkdown from 'react-markdown';
+import services from "@/app/services";
+import ReactMarkdown from "react-markdown";
 
-const BlogBySlug = async (props: any) => {
-  const blog = await fetchSingleBlog(props.params.slug);
-  if (!blog || !blog.data || blog.data.length === 0) {
+const BlogBySlug = async ({ params }: { params: { slug: string } }) => {
+  const blog = await services.queryBlogBySlug(params.slug);
+  if (!blog) {
     return <div>Loading...</div>;
   }
   return (
     <div className="prose my-8">
-      <h1>{blog.data[0].attributes.blogTitle}</h1>
-      <ReactMarkdown>{blog.data[0].attributes.blogContent}</ReactMarkdown>
+      <h1>{blog.blogTitle}</h1>
+      <ReactMarkdown>{blog.blogContent.markdown}</ReactMarkdown>
     </div>
   );
 };

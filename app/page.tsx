@@ -1,9 +1,11 @@
 import Intro from "@/components/Intro";
 import RecentPosts from "@/components/RecentPosts";
-import { fetchBlogs } from "./utils/fetchBlogs";
+import services from "@/app/services";
 
 export default async function Home() {
-  const blogs = await fetchBlogs();
+  const blogs = await services.queryBlogs();
+
+  console.log("Blogs", blogs);
   return (
     <>
       <main>

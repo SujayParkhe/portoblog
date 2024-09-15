@@ -1,8 +1,8 @@
 import Posts from "@/components/Posts";
-import { fetchBlogs } from "../utils/fetchBlogs";
+import services from "@/app/services";
 
 const Blog = async () => {
-  const blogs = await fetchBlogs();
+  const blogs = await services.queryBlogs();
   return (
     <div className="my-16">
       <h1 className="text-4xl font-bold">Blog</h1>
