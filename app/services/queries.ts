@@ -13,10 +13,7 @@ const BlogsQuery = gql`
       }
       slug
       id
-      categories {
-        name
-      }
-      categories {
+      tags {
         name
       }
     }
@@ -29,6 +26,9 @@ const BlogBySlugQuery = gql`
       blogTitle
       blogContent {
         markdown
+      }
+      tags {
+        name
       }
     }
   }

@@ -1,15 +1,36 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  NormalizedCacheObject,
+  HttpLink,
+} from "@apollo/client";
 import {
   type DocumentNode,
-  gql,
   type OperationVariables,
   type TypedDocumentNode,
 } from "@apollo/client/core";
 
-export const client = new ApolloClient({
-  uri: process.env.GRAPHQL_ENDPOINT,
-  cache: new InMemoryCache(),
-});
+function createApolloClient(): ApolloClient<NormalizedCacheObject> {
+  return new ApolloClient({
+    link: new HttpLink({
+      uri: process.env.GRAPHQL_ENDPOINT,
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+    }),
+    cache: new InMemoryCache(),
+    defaultOptions: {
+      watchQuery: {
+        fetchPolicy: "network-only",
+      },
+      query: {
+        fetchPolicy: "network-only",
+      },
+    },
+  });
+}
+
+export const client = createApolloClient();
 
 const graphqlFetcher = async (
   query: DocumentNode | TypedDocumentNode<any, {}>,

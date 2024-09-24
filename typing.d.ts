@@ -7,9 +7,9 @@ type Blog = {
   blogContent: {
     markdown: string;
   };
-  categories: Categories[];
+  tags: Tags[];
 };
 
-type Categories = {
+type Tags = {
   name: string;
 };
