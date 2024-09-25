@@ -3,9 +3,7 @@ import RecentPosts from "@/components/RecentPosts";
 import services from "@/app/services";
 
 export default async function Home() {
-  const blogs = await services.queryBlogs();
-
-  console.log("Blogs", blogs);
+  const blogs = await services.queryRecentBlogs();
   return (
     <>
       <main>

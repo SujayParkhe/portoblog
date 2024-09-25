@@ -13,3 +13,11 @@ type Blog = {
 type Tags = {
   name: string;
 };
+
+type RecentBlogs = {
+  blogTitle: string;
+  blogDescription: string;
+  blogDate: string;
+  id: string;
+  slug: string;
+};
