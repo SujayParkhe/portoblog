@@ -19,7 +19,7 @@ const Intro = () => {
           </h1>
           <div className="mt-4">
             <p className="text-base font-medium pt-2">
-              🚀 Frontend Engineer & DevOps Enthusiast 🛠️
+              🚀 Full Stack Developer & DevOps Enthusiast 🛠️
             </p>
             <p className="text-base font-medium pt-2">
               Crafting seamless experiences & optimizing workflows.
